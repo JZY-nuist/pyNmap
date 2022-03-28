@@ -24,7 +24,7 @@ def show_info(info):
     print(f'{info} at {time.asctime()}')
 
 
-def scan_range(dst, ports, timeout, verbose=False):
+def scan(dst, ports, timeout, verbose=False):
     """Scan a range of ports
 
     Arguments:
@@ -93,7 +93,7 @@ def pyNmap(dst, port, verbose, ping, timeout):
         if verbose:
             show_info(f'Scanning[{dst} one port]')
 
-    exist_ports = scan_range(dst, ports, timeout=timeout, verbose=verbose)
+    exist_ports = scan(dst, ports, timeout=timeout, verbose=verbose)
     end_time = time.time()
     elapsed = end_time - start_time
     if verbose:
